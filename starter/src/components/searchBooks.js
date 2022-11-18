@@ -1,11 +1,13 @@
-import { useCallback, useState } from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import Book from "./book"
 import * as bookAPI from '../BooksAPI'
-import * as _ from 'lodash'
+import InputSearch from "./inputSearch"
+import { PropTypes } from "prop-types"
+
+
 const SearchBooks = ({ handleUpdateShelf }) => {
     const [books, setBooks] = useState([]);
-
 
     const searchBooks = async (value) => {
         const res = await bookAPI.search(value);
@@ -13,14 +15,6 @@ const SearchBooks = ({ handleUpdateShelf }) => {
         else
             setBooks(res)
     }
-
-    const handleSearch = (value) => {
-        if (value.trim() !== "") {
-            delayedQuery(value)
-        }
-    }
-
-    const delayedQuery = useCallback(_.debounce(q => searchBooks(q), 700), []);
 
     return (
         <div className="search-books">
@@ -31,21 +25,19 @@ const SearchBooks = ({ handleUpdateShelf }) => {
                 >
                     Close
                 </Link>
-                <div className="search-books-input-wrapper">
-                    <input
-                        type="text"
-                        placeholder="Search by title, author, or ISBN"
-                        onChange={(event) => handleSearch(event.target.value)}
-                    />
-                </div>
+                <InputSearch onSearch={(event) => searchBooks(event)} />
             </div>
             <div className="search-books-results">
                 <ol className="books-grid">
-                    {books.map(book => <Book key={book.id} book={book} onchangeShelf={(book, shelf) => handleUpdateShelf(book, shelf)} />)}
+                    {books.map(book => <Book key={book.id} bookId={book.id} onchangeShelf={(book, shelf) => handleUpdateShelf(book, shelf)} />)}
                 </ol>
             </div>
         </div>
     )
+}
+
+SearchBooks.propTypes = {
+    handleUpdateShelf: PropTypes.func.isRequired
 }
 
 export default SearchBooks

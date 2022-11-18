@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import Shelfs from "./shelfs"
 
 const BooksList = ({ books, handleUpdateShelf }) => {
-
     return (
         <div className="list-books">
             <div className="list-books-title">

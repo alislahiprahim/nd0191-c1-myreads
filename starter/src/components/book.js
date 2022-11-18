@@ -1,6 +1,20 @@
 import PropTypes from 'prop-types'
+import { useEffect, useState } from 'react'
 import ShelfChanger from './shelfChanger'
-const Book = ({ book, onchangeShelf }) => {
+import * as bookAPI from "../BooksAPI"
+
+
+const Book = ({ bookId, onchangeShelf }) => {
+    const [book, setBook] = useState([])
+
+    useEffect(() => {
+        const getBook = async () => {
+            const res = await bookAPI.get(bookId);
+            setBook(res)
+        }
+        getBook()
+
+    }, [bookId])
 
     return (
         <li>
@@ -25,7 +39,7 @@ const Book = ({ book, onchangeShelf }) => {
 }
 
 Book.propTypes = {
-    book: PropTypes.object.isRequired,
+    bookId: PropTypes.string.isRequired,
     onchangeShelf: PropTypes.func.isRequired
 }
 

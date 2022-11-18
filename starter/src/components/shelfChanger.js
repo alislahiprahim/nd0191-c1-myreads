@@ -8,15 +8,15 @@ const ShelfChanger = ({ onSelectShelf, currentShelf }) => {
 
     return (
         <div className="book-shelf-changer">
-            <select onChange={(event) => handleSelect(event)} value="none">
-                <option value="none" disabled>
+            <select onChange={(event) => handleSelect(event)} value={currentShelf}>
+                <option disabled>
                     Move to...
                 </option>
-                <option value="currentlyReading" disabled={currentShelf === "currentlyReading"}>
+                <option value="currentlyReading">
                     Currently Reading
                 </option>
-                <option value="wantToRead" disabled={currentShelf === "wantToRead"}>Want to Read</option>
-                <option value="read" disabled={currentShelf === "read"}>Read</option>
+                <option value="wantToRead">Want to Read</option>
+                <option value="read">Read</option>
                 <option value="none">None</option>
             </select>
         </div >
