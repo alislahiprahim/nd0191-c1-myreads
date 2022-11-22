@@ -95,7 +95,7 @@ in src folder the components folder that contains our main pages :
     a page renders our shelfs that contains selected books.
 - ### `SearchBooks` search page
     a page renders search bar and list of books result of search value. 
--### `NotFound` not found page
+- ### `NotFound` not found page
     a page renders 'not found' when route is wrong and helps to redicrect to home.
     
 and our breakdown reusable components :
