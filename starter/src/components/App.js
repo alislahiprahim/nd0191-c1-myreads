@@ -4,6 +4,7 @@ import * as bookAPI from "../BooksAPI"
 import BooksList from "./booksList";
 import { Route, Routes } from "react-router-dom";
 import SearchBooks from "./searchBooks";
+import NotFound from "./notFound";
 function App() {
 
   const [books, setBooks] = useState([]);
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className="app">
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route
           exact
           path="/"

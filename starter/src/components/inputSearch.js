@@ -5,9 +5,9 @@ import { PropTypes } from "prop-types"
 const InputSearch = ({ onSearch }) => {
 
     const handleSearch = (value) => {
-        if (value.trim() !== "") {
+
             delayedQuery(value)
-        }
+
     }
 
     const delayedQuery = useCallback(_.debounce(q => onSearch(q), 700), []);

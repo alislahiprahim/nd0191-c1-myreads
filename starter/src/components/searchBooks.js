@@ -10,6 +10,10 @@ const SearchBooks = ({ handleUpdateShelf }) => {
     const [books, setBooks] = useState([]);
 
     const searchBooks = async (value) => {
+        if (value.trim() === "") {
+            setBooks([])
+            return
+        }
         const res = await bookAPI.search(value);
         if (res?.error) setBooks([])
         else
