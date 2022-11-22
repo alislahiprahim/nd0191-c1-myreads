@@ -87,8 +87,24 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebook/create-react-app/blob/main/packages/cra-template/template/README.md).
 
-## Contributing
+## Components
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+in src folder the components folder that contains our main pages :
+-[`App`] app.js
+-[`BooksList`] books List page
+    a page renders our shelfs that contains selected books.
+-[`SearchBooks`] search page
+    a page renders search bar and list of books result of search value. 
+-[`NotFound`] not found page
+    a page renders 'not found' when route is wrong and helps to redicrect to home.
+    
+and our breakdown reusable components :
+-[`Shelfs`] shelfs component
+    renders the shelf title and list of books thar belong to that shelf.
+-[`Book`] book component 
+    that renders the book thumnail, title, authors name.
+-[`ShelfChanger`] shelf changer
+    renders dropdown selection that helps in changing book shelfs.
+-[`InputSearch`] input search 
+    renders input field that handel search value
+    
