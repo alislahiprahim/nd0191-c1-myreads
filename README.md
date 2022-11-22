@@ -90,21 +90,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Components
 
 in src folder the components folder that contains our main pages :
--[`App`] app.js
--[`BooksList`] books List page
+- ### `App` app.js
+- ### `BooksList` books List page
     a page renders our shelfs that contains selected books.
--[`SearchBooks`] search page
+- ### `SearchBooks` search page
     a page renders search bar and list of books result of search value. 
--[`NotFound`] not found page
+-### `NotFound` not found page
     a page renders 'not found' when route is wrong and helps to redicrect to home.
     
 and our breakdown reusable components :
--[`Shelfs`] shelfs component
+- ### `Shelfs` shelfs component
     renders the shelf title and list of books thar belong to that shelf.
--[`Book`] book component 
+- ### `Book` book component 
     that renders the book thumnail, title, authors name.
--[`ShelfChanger`] shelf changer
+- ### `ShelfChanger` shelf changer
     renders dropdown selection that helps in changing book shelfs.
--[`InputSearch`] input search 
+- ### `InputSearch` input search 
     renders input field that handel search value
     
